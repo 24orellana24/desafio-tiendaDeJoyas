@@ -102,10 +102,10 @@ app.get("/api/v2/joya/campos/:id", (req, res) => {
 
 const orderValues = (order) => {
   return order == "asc"
-  ? joyas.results.sort((a, b) => (a.value > b.value ? 1 : -1))
-  : order == "desc"
-  ? joyas.results.sort((a, b) => (a.value < b.value ? 1 : -1))
-  : false;
+    ? joyas.results.sort((a, b) => (a.value > b.value ? 1 : -1))
+    : order == "desc"
+    ? joyas.results.sort((a, b) => (a.value < b.value ? 1 : -1))
+    : false;
 };
 
 app.get("/api/v2/joyas-order", (req, res) => {
@@ -114,3 +114,5 @@ app.get("/api/v2/joyas-order", (req, res) => {
   if (values == "desc") return res.send(orderValues("desc"));
   res.send({ joyas: HATEOAS_v2() });
 });
+
+// Fin del desafío
